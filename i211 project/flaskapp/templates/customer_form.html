@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Add a customer{% endblock %}
+
+{% block content %} 
+
+<h1 class = "display-4">Add a Customer</h1>
+<p class = "lead">Add a customer to our list for our rewards program!</p>
+
+<form action="{{url_for('add_new_customer')}}" method="POST" enctype="multipart/form-data">
+<!-- add inside form element -->
+<div class="mb-3">
+    <label for="name" class="form-label">Customer Name:</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Name of Customer">
+</div>
+<div class="mb-3">
+    <label for="email" class="form-label">Customer Email:</label>
+    <textarea class="form-control" id="email" name="email"></textarea>
+</div>
+<div class="mb-3">
+    <label for="phone" class="form-label">Customer Phone Number:</label>
+    <textarea class="form-control" id="phone" name="phone" ></textarea>
+</div>
+
+    <div class="mt-4">
+        <button type="Submit">Add Customer</button>
+        <button type="Reset">Clear Form</button>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

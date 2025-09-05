@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1 class="display-4">&#127859;Jainiah's Breakfast</h1>
+
+<p class="lead">Welcome to Jainiah's Breakfast! We hope you to see you soon! </p>
+
+
+
+
+<div class="row pt-4">
+    {% for menu in items %}
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
+
+        <div class="card h-100 hvr-grow" style="width: 18rem;">
+            <img class="card-img-top" src="{{ url_for('static', filename=items[menu]['image_path']) }}"
+                alt="{{ items[menu]['name'] }}">
+            <div class="card-body">
+                <h2>{{ items[menu]['name'] }}</h2> 
+                <h5>{{ items[menu]['cost'] }}</h5>
+                <p class="card-text">{{items[menu]['tagline']}}</p>
+
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
